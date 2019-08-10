@@ -5,7 +5,9 @@ import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Post;
 import io.micronaut.http.annotation.Produces;
+import seed.micronaut.project.toggle.Feature;
 
+@Feature("echo")
 @Controller("/echo")
 public class EchoController {
 
