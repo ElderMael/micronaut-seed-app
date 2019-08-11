@@ -22,7 +22,10 @@ configurations {
 
 dependencies {
 
-    compile "io.eldermael.zwitch:zwitch-annotations:0.1.0"
+    compile "io.eldermael:zwitch-annotations:0.1.0"
+
+    compileOnly 'org.projectlombok:lombok:1.16.20'
+    annotationProcessor "org.projectlombok:lombok:1.16.20"
 
     annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     annotationProcessor "io.micronaut:micronaut-inject-java"
