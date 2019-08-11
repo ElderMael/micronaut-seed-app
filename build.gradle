@@ -10,6 +10,7 @@ version "0.1"
 group "seed.micronaut.project"
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven { url "https://jcenter.bintray.com" }
 }
@@ -20,9 +21,13 @@ configurations {
 }
 
 dependencies {
+
+    compile "io.eldermael.zwitch:zwitch-annotations:0.1.0"
+
     annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     annotationProcessor "io.micronaut:micronaut-inject-java"
     annotationProcessor "io.micronaut:micronaut-validation"
+
     implementation platform("io.micronaut:micronaut-bom:$micronautVersion")
     implementation "io.micronaut:micronaut-inject"
     implementation "io.micronaut:micronaut-validation"
@@ -30,7 +35,9 @@ dependencies {
     implementation "javax.annotation:javax.annotation-api"
     implementation "io.micronaut:micronaut-http-server-netty"
     implementation "io.micronaut:micronaut-http-client"
+
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
+
     testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"
     testImplementation "org.junit.jupiter:junit-jupiter-api"
